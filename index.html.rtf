@@ -1,0 +1,444 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2821
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww29200\viewh15720\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="zh">\
+<head>\
+<meta charset="UTF-8">\
+<meta name="viewport" content="width=device-width, initial-scale=1.0">\
+<title>Y2 BMK APR</title>\
+<link rel="preconnect" href="https://fonts.googleapis.com">\
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\
+<link href="https://fonts.googleapis.com/css2?family=KaiTi&display=swap" rel="stylesheet">\
+<link href="https://fonts.googleapis.com/css2?family=Comic+Sans+MS&display=swap" rel="stylesheet">\
+<style>\
+:root \{\
+  --blue-theme: #E3F2FD;\
+  --pink-theme: #FCE4EC;\
+  --purple-theme: #F3E5F5;\
+  --green-theme: #E8F5E9;\
+\}\
+body \{\
+  font-family: 'KaiTi', serif;\
+  background-color: #f7fafc;\
+  margin: 0;\
+  padding: 0;\
+\}\
+.flashcard-container \{\
+  display: grid;\
+  grid-template-columns: repeat(2, 1fr);\
+  gap: 15px;\
+  padding: 15px;\
+  max-width: 100%;\
+  margin: 0 auto;\
+\}\
+@media (max-width: 768px) \{\
+  .flashcard-container \{\
+    grid-template-columns: 1fr;\
+    padding: 10px;\
+  \}\
+\}\
+.card-group \{\
+  padding: 15px;\
+  border-radius: 12px;\
+  display: none;\
+  background-color: white;\
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);\
+\}\
+.group-1 \{ background-color: var(--blue-theme); \}\
+.group-2 \{ background-color: var(--pink-theme); \}\
+.group-3 \{ background-color: var(--purple-theme); \}\
+.group-4 \{ background-color: var(--green-theme); \}\
+.card \{\
+  width: 100%;\
+  height: 180px;\
+  margin: 10px auto;\
+  perspective: 1000px;\
+  cursor: pointer;\
+  position: relative;\
+\}\
+.card-inner \{\
+  position: relative;\
+  width: 100%;\
+  height: 100%;\
+  text-align: center;\
+  transition: transform 0.6s;\
+  transform-style: preserve-3d;\
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);\
+  border-radius: 8px;\
+  background-color: white;\
+\}\
+.card.flipped .card-inner \{\
+  transform: rotateY(180deg);\
+\}\
+.card-front, .card-back \{\
+  position: absolute;\
+  width: 100%;\
+  height: 100%;\
+  backface-visibility: hidden;\
+  display: flex;\
+  flex-direction: column;\
+  align-items: center;\
+  justify-content: center;\
+  padding: 12px;\
+  border-radius: 8px;\
+  background: white;\
+  font-size: 22px;\
+  word-wrap: break-word;\
+  overflow: hidden;\
+  box-sizing: border-box;\
+\}\
+.card-front \{\
+  font-family: 'KaiTi', serif;\
+\}\
+.card-back \{\
+  transform: rotateY(180deg);\
+  font-family: 'Comic Sans MS', cursive;\
+\}\
+.sound-icon \{\
+  margin-top: 10px;\
+  font-size: 20px;\
+  cursor: pointer;\
+  color: #4285f4;\
+\}\
+.group-title \{\
+  font-weight: bold;\
+  padding: 8px 0;\
+  margin-bottom: 12px;\
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);\
+  font-size: 28px;\
+  font-family: 'KaiTi', serif;\
+  text-align: center;\
+\}\
+.button-container \{\
+  display: flex;\
+  flex-wrap: wrap;\
+  justify-content: center;\
+  gap: 10px;\
+  margin: 15px 0;\
+  padding: 0 10px;\
+\}\
+.button-container button \{\
+  padding: 8px 16px;\
+  border: none;\
+  border-radius: 5px;\
+  color: black;\
+  cursor: pointer;\
+  font-size: 18px;\
+  font-family: 'Comic Sans MS', cursive;\
+  transition: background-color 0.3s ease;\
+\}\
+.button-container button.group-1-btn \{\
+  background-color: var(--blue-theme);\
+\}\
+.button-container button.group-2-btn \{\
+  background-color: var(--pink-theme);\
+\}\
+.button-container button.group-3-btn \{\
+  background-color: var(--purple-theme);\
+\}\
+.button-container button.group-4-btn \{\
+  background-color: var(--green-theme);\
+\}\
+.button-container button:hover \{\
+  opacity: 0.8;\
+\}\
+.instruction \{\
+  text-align: center;\
+  margin: 12px 0;\
+  color: #666;\
+  font-size: 18px;\
+  font-family: 'KaiTi', serif;\
+\}\
+.header \{\
+  background-color: white;\
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);\
+  padding: 15px 0;\
+  text-align: center;\
+\}\
+.header h1 \{\
+  font-size: 24px;\
+  margin: 0;\
+\}\
+</style>\
+</head>\
+<body>\
+<div class="header">\
+  <h1>Y2 BMK APR</h1>\
+  <p class="instruction">\uc0\u28857 \u20987 \u21345 \u29255 \u32763 \u36716 \u65292 \u28857 \u20987 \u21895 \u21485 \u22270 \u26631 \u21548 \u21457 \u38899 </p>\
+</div>\
+<div class="button-container">\
+  <button class="group-1-btn" onclick="toggleGroup('group-1')">8-14/4</button>\
+  <button class="group-2-btn" onclick="toggleGroup('group-2')">15-21/4</button>\
+  <button class="group-3-btn" onclick="toggleGroup('group-3')">22-28/4</button>\
+  <button class="group-4-btn" onclick="toggleGroup('group-4')">1-7/5</button>\
+</div>\
+<div class="flashcard-container">\
+  <!-- 8-14/4 -->\
+  <section id="group-1" class="card-group group-1">\
+    <h2 class="group-title">8-14/4</h2>\
+    <div class="card">\
+      <div class="card-inner">\
+        <div class="card-front">\uc0\u29609 \u24377 \u29664 <span class="sound-icon" onclick="playChinese('\u29609 \u24377 \u29664 ', event)">\u55357 \u56586 </span></div>\
+        <div class="card-back">bermain guli<span class="sound-icon" onclick="playMalay('bermain guli', event)">\uc0\u55357 \u56586 </span></div>\
+      </div>\
+    </div>\
+    <div class="card">\
+      <div class="card-inner">\
+        <div class="card-front">\uc0\u38506 \u24351 \u24351 <span class="sound-icon" onclick="playChinese('\u38506 \u24351 \u24351 ', event)">\u55357 \u56586 </span></div>\
+        <div class="card-back">menemani adik<span class="sound-icon" onclick="playMalay('menemani adik', event)">\uc0\u55357 \u56586 </span></div>\
+      </div>\
+    </div>\
+    <div class="card">\
+      <div class="card-inner">\
+        <div class="card-front">\uc0\u30475 \u30005 \u35270 <span class="sound-icon" onclick="playChinese('\u30475 \u30005 \u35270 ', event)">\u55357 \u56586 </span></div>\
+        <div class="card-back">menonton televisyen<span class="sound-icon" onclick="playMalay('menonton televisyen', event)">\uc0\u55357 \u56586 </span></div>\
+      </div>\
+    </div>\
+    <div class="card">\
+      <div class="card-inner">\
+        <div class="card-front">\uc0\u36981 \u23432 \u35268 \u21017 <span class="sound-icon" onclick="playChinese('\u36981 \u23432 \u35268 \u21017 ', event)">\u55357 \u56586 </span></div>\
+        <div class="card-back">mematuhi peraturan<span class="sound-icon" onclick="playMalay('mematuhi peraturan', event)">\uc0\u55357 \u56586 </span></div>\
+      </div>\
+    </div>\
+    <div class="card">\
+      <div class="card-inner">\
+        <div class="card-front">\uc0\u36807 \u39532 \u36335 <span class="sound-icon" onclick="playChinese('\u36807 \u39532 \u36335 ', event)">\u55357 \u56586 </span></div>\
+        <div class="card-back">melintas jalan<span class="sound-icon" onclick="playMalay('melintas jalan', event)">\uc0\u55357 \u56586 </span></div>\
+      </div>\
+    </div>\
+    <div class="card">\
+      <div class="card-inner">\
+        <div class="card-front">\uc0\u29992 \u22825 \u26725 <span class="sound-icon" onclick="playChinese('\u29992 \u22825 \u26725 ', event)">\u55357 \u56586 </span></div>\
+        <div class="card-back">menggunakan jejantas<span class="sound-icon" onclick="playMalay('menggunakan jejantas', event)">\uc0\u55357 \u56586 </span></div>\
+      </div>\
+    </div>\
+    <div class="card">\
+      <div class="card-inner">\
+        <div class="card-front">\uc0\u32465 \u23433 \u20840 \u24125 <span class="sound-icon" onclick="playChinese('\u32465 \u23433 \u20840 \u24125 ', event)">\u55357 \u56586 </span></div>\
+        <div class="card-back">memakai topi keledar<span class="sound-icon" onclick="playMalay('memakai topi keledar', event)">\uc0\u55357 \u56586 </span></div>\
+      </div>\
+    </div>\
+  </section>\
+\
+  <!-- 15-21/4 -->\
+  <section id="group-2" class="card-group group-2">\
+    <h2 class="group-title">15-21/4</h2>\
+    <div class="card">\
+      <div class="card-inner">\
+        <div class="card-front">\uc0\u31561 \u24052 \u22763 <span class="sound-icon" onclick="playChinese('\u31561 \u24052 \u22763 ', event)">\u55357 \u56586 </span></div>\
+        <div class="card-back">menunggu bas<span class="sound-icon" onclick="playMalay('menunggu bas', event)">\uc0\u55357 \u56586 </span></div>\
+      </div>\
+    </div>\
+    <div class="card">\
+      <div class="card-inner">\
+        <div class="card-front">\uc0\u27969 \u27735 <span class="sound-icon" onclick="playChinese('\u27969 \u27735 ', event)">\u55357 \u56586 </span></div>\
+        <div class="card-back">mengeluarkan peluh<span class="sound-icon" onclick="playMalay('mengeluarkan peluh', event)">\uc0\u55357 \u56586 </span></div>\
+      </div>\
+    </div>\
+    <div class="card">\
+      <div class="card-inner">\
+        <div class="card-front">\uc0\u21098 \u25351 \u30002 <span class="sound-icon" onclick="playChinese('\u21098 \u25351 \u30002 ', event)">\u55357 \u56586 </span></div>\
+        <div class="card-back">memotong kuku<span class="sound-icon" onclick="playMalay('memotong kuku', event)">\uc0\u55357 \u56586 </span></div>\
+      </div>\
+    </div>\
+    <div class="card">\
+      <div class="card-inner">\
+        <div class="card-front">\uc0\u29031 \u39038 \u23433 \u20840 <span class="sound-icon" onclick="playChinese('\u29031 \u39038 \u23433 \u20840 ', event)">\u55357 \u56586 </span></div>\
+        <div class="card-back">menjaga keselamatan<span class="sound-icon" onclick="playMalay('menjaga keselamatan', event)">\uc0\u55357 \u56586 </span></div>\
+      </div>\
+    </div>\
+    <div class="card">\
+      <div class="card-inner">\
+        <div class="card-front">\uc0\u21809 \u27468 <span class="sound-icon" onclick="playChinese('\u21809 \u27468 ', event)">\u55357 \u56586 </span></div>\
+        <div class="card-back">menyanyikan lagu<span class="sound-icon" onclick="playMalay('menyanyikan lagu', event)">\uc0\u55357 \u56586 </span></div>\
+      </div>\
+    </div>\
+    <div class="card">\
+      <div class="card-inner">\
+        <div class="card-front">\uc0\u24110 \u32769 \u20154 <span class="sound-icon" onclick="playChinese('\u24110 \u32769 \u20154 ', event)">\u55357 \u56586 </span></div>\
+        <div class="card-back">menolong orang tua<span class="sound-icon" onclick="playMalay('menolong orang tua', event)">\uc0\u55357 \u56586 </span></div>\
+      </div>\
+    </div>\
+    <div class="card">\
+      <div class="card-inner">\
+        <div class="card-front">\uc0\u31449 \u30452 <span class="sound-icon" onclick="playChinese('\u31449 \u30452 ', event)">\u55357 \u56586 </span></div>\
+        <div class="card-back">berdiri tegak<span class="sound-icon" onclick="playMalay('berdiri tegak', event)">\uc0\u55357 \u56586 </span></div>\
+      </div>\
+    </div>\
+  </section>\
+\
+  <!-- 22-28/4 -->\
+  <section id="group-3" class="card-group group-3">\
+    <h2 class="group-title">22-28/4</h2>\
+    <div class="card">\
+      <div class="card-inner">\
+        <div class="card-front">\uc0\u28201 \u20064 \u21151 \u35838 <span class="sound-icon" onclick="playChinese('\u28201 \u20064 \u21151 \u35838 ', event)">\u55357 \u56586 </span></div>\
+        <div class="card-back">mengulang kaji pelajaran<span class="sound-icon" onclick="playMalay('mengulang kaji pelajaran', event)">\uc0\u55357 \u56586 </span></div>\
+      </div>\
+    </div>\
+    <div class="card">\
+      <div class="card-inner">\
+        <div class="card-front">\uc0\u20511 \u20070 <span class="sound-icon" onclick="playChinese('\u20511 \u20070 ', event)">\u55357 \u56586 </span></div>\
+        <div class="card-back">meminjam buku<span class="sound-icon" onclick="playMalay('meminjam buku', event)">\uc0\u55357 \u56586 </span></div>\
+      </div>\
+    </div>\
+    <div class="card">\
+      <div class="card-inner">\
+        <div class="card-front">\uc0\u19978 \u32593 <span class="sound-icon" onclick="playChinese('\u19978 \u32593 ', event)">\u55357 \u56586 </span></div>\
+        <div class="card-back">melayari Internet<span class="sound-icon" onclick="playMalay('melayari Internet', event)">\uc0\u55357 \u56586 </span></div>\
+      </div>\
+    </div>\
+    <div class="card">\
+      <div class="card-inner">\
+        <div class="card-front">\uc0\u25214 \u36164 \u26009 <span class="sound-icon" onclick="playChinese('\u25214 \u36164 \u26009 ', event)">\u55357 \u56586 </span></div>\
+        <div class="card-back">mencari maklumat<span class="sound-icon" onclick="playMalay('mencari maklumat', event)">\uc0\u55357 \u56586 </span></div>\
+      </div>\
+    </div>\
+    <div class="card">\
+      <div class="card-inner">\
+        <div class="card-front">\uc0\u25214 \u20070 <span class="sound-icon" onclick="playChinese('\u25214 \u20070 ', event)">\u55357 \u56586 </span></div>\
+        <div class="card-back">mencari buku<span class="sound-icon" onclick="playMalay('mencari buku', event)">\uc0\u55357 \u56586 </span></div>\
+      </div>\
+    </div>\
+    <div class="card">\
+      <div class="card-inner">\
+        <div class="card-front">\uc0\u25343 \u20070 <span class="sound-icon" onclick="playChinese('\u25343 \u20070 ', event)">\u55357 \u56586 </span></div>\
+        <div class="card-back">mengambil buku<span class="sound-icon" onclick="playMalay('mengambil buku', event)">\uc0\u55357 \u56586 </span></div>\
+      </div>\
+    </div>\
+    <div class="card">\
+      <div class="card-inner">\
+        <div class="card-front">\uc0\u25490 \u20070 <span class="sound-icon" onclick="playChinese('\u25490 \u20070 ', event)">\u55357 \u56586 </span></div>\
+        <div class="card-back">menyusun buku<span class="sound-icon" onclick="playMalay('menyusun buku', event)">\uc0\u55357 \u56586 </span></div>\
+      </div>\
+    </div>\
+  </section>\
+\
+  <!-- 1-7/5 -->\
+  <section id="group-4" class="card-group group-4">\
+    <h2 class="group-title">1-7/5</h2>\
+    <div class="card">\
+      <div class="card-inner">\
+        <div class="card-front">\uc0\u20080 \u39135 \u29289 <span class="sound-icon" onclick="playChinese('\u20080 \u39135 \u29289 ', event)">\u55357 \u56586 </span></div>\
+        <div class="card-back">membeli makanan<span class="sound-icon" onclick="playMalay('membeli makanan', event)">\uc0\u55357 \u56586 </span></div>\
+      </div>\
+    </div>\
+    <div class="card">\
+      <div class="card-inner">\
+        <div class="card-front">\uc0\u23567 \u24515 \u39550 \u36710 <span class="sound-icon" onclick="playChinese('\u23567 \u24515 \u39550 \u36710 ', event)">\u55357 \u56586 </span></div>\
+        <div class="card-back">memandu dengan cermat<span class="sound-icon" onclick="playMalay('memandu dengan cermat', event)">\uc0\u55357 \u56586 </span></div>\
+      </div>\
+    </div>\
+    <div class="card">\
+      <div class="card-inner">\
+        <div class="card-front">\uc0\u32465 \u23433 \u20840 \u24102 <span class="sound-icon" onclick="playChinese('\u32465 \u23433 \u20840 \u24102 ', event)">\u55357 \u56586 </span></div>\
+        <div class="card-back">memakai tali pinggang keledar<span class="sound-icon" onclick="playMalay('memakai tali pinggang keledar', event)">\uc0\u55357 \u56586 </span></div>\
+      </div>\
+    </div>\
+    <div class="card">\
+      <div class="card-inner">\
+        <div class="card-front">\uc0\u36127 \u36131 \u20219 <span class="sound-icon" onclick="playChinese('\u36127 \u36131 \u20219 ', event)">\u55357 \u56586 </span></div>\
+        <div class="card-back">bertanggungjawab<span class="sound-icon" onclick="playMalay('bertanggungjawab', event)">\uc0\u55357 \u56586 </span></div>\
+      </div>\
+    </div>\
+    <div class="card">\
+      <div class="card-inner">\
+        <div class="card-front">\uc0\u31561 \u32418 \u32511 \u28783 <span class="sound-icon" onclick="playChinese('\u31561 \u32418 \u32511 \u28783 ', event)">\u55357 \u56586 </span></div>\
+        <div class="card-back">menunggu lampu isyarat<span class="sound-icon" onclick="playMalay('menunggu lampu isyarat', event)">\uc0\u55357 \u56586 </span></div>\
+      </div>\
+    </div>\
+    <div class="card">\
+      <div class="card-inner">\
+        <div class="card-front">\uc0\u36981 \u23432 \u38480 \u36895 <span class="sound-icon" onclick="playChinese('\u36981 \u23432 \u38480 \u36895 ', event)">\u55357 \u56586 </span></div>\
+        <div class="card-back">mematuhi had laju<span class="sound-icon" onclick="playMalay('mematuhi had laju', event)">\uc0\u55357 \u56586 </span></div>\
+      </div>\
+    </div>\
+    <div class="card">\
+      <div class="card-inner">\
+        <div class="card-front">\uc0\u26377 \u31036 \u35980 <span class="sound-icon" onclick="playChinese('\u26377 \u31036 \u35980 ', event)">\u55357 \u56586 </span></div>\
+        <div class="card-back">berbudi bahasa<span class="sound-icon" onclick="playMalay('berbudi bahasa', event)">\uc0\u55357 \u56586 </span></div>\
+      </div>\
+    </div>\
+  </section>\
+</div>\
+<script>\
+// \uc0\u20999 \u25442 \u21345 \u29255 \u32452 \u26174 \u31034 \
+function toggleGroup(groupId) \{\
+  const group = document.getElementById(groupId);\
+  group.style.display = group.style.display === "none" ? "block" : "none";\
+\}\
+\
+// \uc0\u21345 \u29255 \u20132 \u20114 \u21151 \u33021 \
+document.querySelectorAll('.card').forEach(card => \{\
+  card.addEventListener('click', function(e) \{\
+    // \uc0\u22914 \u26524 \u28857 \u20987 \u30340 \u26159 \u21895 \u21485 \u22270 \u26631 \u65292 \u21017 \u19981 \u32763 \u36716 \u21345 \u29255 \
+    if (!e.target.classList.contains('sound-icon')) \{\
+      this.classList.toggle('flipped');\
+    \}\
+  \});\
+\});\
+\
+// \uc0\u25773 \u25918 \u20013 \u25991 \u21457 \u38899 \
+function playChinese(text, event) \{\
+  event.stopPropagation(); // \uc0\u38459 \u27490 \u20107 \u20214 \u20882 \u27873 \
+  if (window.speechSynthesis) \{\
+    const utterance = new SpeechSynthesisUtterance(text);\
+    utterance.lang = 'zh-CN';\
+    utterance.rate = 0.9;\
+    \
+    // \uc0\u23581 \u35797 \u23547 \u25214 \u20013 \u25991 \u35821 \u38899 \
+    const voices = window.speechSynthesis.getVoices();\
+    const chineseVoice = voices.find(voice => \
+      voice.lang.includes('zh-') || voice.lang.includes('cmn-')\
+    );\
+    \
+    if (chineseVoice) \{\
+      utterance.voice = chineseVoice;\
+    \}\
+    \
+    window.speechSynthesis.cancel(); // \uc0\u21462 \u28040 \u24403 \u21069 \u27491 \u22312 \u25773 \u25918 \u30340 \u35821 \u38899 \
+    window.speechSynthesis.speak(utterance);\
+  \} else \{\
+    alert("\uc0\u24744 \u30340 \u27983 \u35272 \u22120 \u19981 \u25903 \u25345 \u35821 \u38899 \u21512 \u25104 \u21151 \u33021 \u65292 \u35831 \u20351 \u29992 Chrome\u25110 Edge\u27983 \u35272 \u22120 ");\
+  \}\
+\}\
+\
+// \uc0\u25773 \u25918 \u39532 \u26469 \u25991 \u21457 \u38899 \
+function playMalay(text, event) \{\
+  event.stopPropagation(); // \uc0\u38459 \u27490 \u20107 \u20214 \u20882 \u27873 \
+  if (window.speechSynthesis) \{\
+    const utterance = new SpeechSynthesisUtterance(text);\
+    utterance.lang = 'ms-MY'; // \uc0\u39532 \u26469 \u35821 \
+    utterance.rate = 0.9;\
+    \
+    // \uc0\u23581 \u35797 \u23547 \u25214 \u39532 \u26469 \u35821 \u35821 \u38899 \
+    const voices = window.speechSynthesis.getVoices();\
+    const malayVoice = voices.find(voice => \
+      voice.lang.includes('ms-') || voice.lang.includes('malay')\
+    );\
+    \
+    if (malayVoice) \{\
+      utterance.voice = malayVoice;\
+    \}\
+    \
+    window.speechSynthesis.cancel(); // \uc0\u21462 \u28040 \u24403 \u21069 \u27491 \u22312 \u25773 \u25918 \u30340 \u35821 \u38899 \
+    window.speechSynthesis.speak(utterance);\
+  \} else \{\
+    alert("\uc0\u24744 \u30340 \u27983 \u35272 \u22120 \u19981 \u25903 \u25345 \u35821 \u38899 \u21512 \u25104 \u21151 \u33021 \u65292 \u35831 \u20351 \u29992 Chrome\u25110 Edge\u27983 \u35272 \u22120 ");\
+  \}\
+\}\
+\
+// \uc0\u21152 \u36733 \u35821 \u38899 \u21015 \u34920 \u65288 \u26576 \u20123 \u27983 \u35272 \u22120 \u38656 \u35201 \u65289 \
+if (speechSynthesis.onvoiceschanged !== undefined) \{\
+  speechSynthesis.onvoiceschanged = function() \{\
+    // \uc0\u35821 \u38899 \u21015 \u34920 \u24050 \u21152 \u36733 \
+  \};\
+\}\
+</script>\
+</body>\
+</html>}
